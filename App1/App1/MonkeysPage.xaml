@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.MonkeysPage">
+    <ScrollView>
+        <StackLayout Margin="20">
+            <ListView x:Name="listView"></ListView>
+            <Label Text="Monkeys" FontAttributes="Bold" HorizontalOptions="Center" />
+            <Picker Title="Select a monkey" x:Name="MonkeyPicker" ItemsSource="{Binding Monkeys}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectedMonkey}" />
+            <Label Text="{Binding SelectedMonkey.Name}" HorizontalOptions="Center" Style="{DynamicResource TitleStyle}" />
+            <Label Text="{Binding SelectedMonkey.Location}" FontAttributes="Italic" HorizontalOptions="Center" />
+            <Image Source="{Binding SelectedMonkey.ImageUrl}" HeightRequest="200" WidthRequest="200" HorizontalOptions="CenterAndExpand" />
+            <Label Text="{Binding SelectedMonkey.Details}" Style="{DynamicResource BodyStyle}" />
+            <Button Clicked="InitMonkey" Text="保存"></Button>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
